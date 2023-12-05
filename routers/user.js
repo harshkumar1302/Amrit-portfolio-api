@@ -107,7 +107,16 @@ router.get('/api/users/v1/me', auth, async (req, res) => {
 })
 
 // Get All Users
-router.get('/api/users', auth, async (req, res) => {
+// router.get('/api/users', auth, async (req, res) => {
+//     try {
+//         const users = await User.find({})
+//         res.send(users)
+//     } catch (error) {
+//         res.status(500).send(error)
+//     }
+// })
+
+router.get('/api/users', async (req, res) => {
     try {
         const users = await User.find({})
         res.send(users)
